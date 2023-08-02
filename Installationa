@@ -1,0 +1,34 @@
+# Refer Here for Jenkins Installations: https://www.jenkins.io/doc/book/installing/  
+# Refer Here for Jenkins Installations in Ubuntu: https://www.jenkins.io/doc/book/installing/linux/#debianubuntu 
+
+For Installing Jenkins Java installation is required.
+Lets install LTS (Long Term Support Version) 
+
+# Install Java
+sudo apt-get update
+sudo apt-get install openjdk-17-jdk -y
+
+# Install Jenkins
+curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo tee \
+  /usr/share/keyrings/jenkins-keyring.asc > /dev/null
+
+echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+  https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+  /etc/apt/sources.list.d/jenkins.list > /dev/null
+
+sudo apt-get update
+sudo apt-get install  jenkins -y 
+
+After installing jenkins, a user jenkins got created with /var/lib/jenkins as a Home directory and /bin/bash as default shell
+
+#Now access jenkins using http://<publicip>:8080
+
+# Initial password location
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+#copy the initial secret and click on continue
+
+# Unlock Jenkins 
+# Customize Jenkins (Install SUggested Plugins)
+# Create First Admin User
+# Instance configuration (Jenkins URL)
+Jenkins is ready
