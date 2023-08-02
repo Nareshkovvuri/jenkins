@@ -4,6 +4,8 @@
 For Installing Jenkins Java installation is required.
 Lets install LTS (Long Term Support Version) 
 
+(Switch to root user and excute the commands.) 
+
 # Install Java
 sudo apt-get update
 sudo apt-get install openjdk-17-jdk -y
